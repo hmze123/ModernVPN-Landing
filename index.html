@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModernVPN | المنظومة المتكاملة للخصوصية الرقمية</title>
+    <title>ModernVPN | المنظومة التقنية المتكاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -19,105 +19,48 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: #fff; font-family: 'Noto Sans Arabic', sans-serif; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg);
-            color: #fff;
-            font-family: 'Noto Sans Arabic', sans-serif;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* تأثير الخلفية التقنية */
-        .tech-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(0, 230, 118, 0.05) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        /* الهيدر المطور */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 1.5rem 10%;
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 10%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(3, 3, 3, 0.8); backdrop-filter: blur(20px);
+            background: rgba(3, 3, 3, 0.85); backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border); z-index: 1000;
         }
 
-        .nav-logo { font-size: 1.8rem; font-weight: 900; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .nav-socials a { color: #fff; margin-right: 20px; font-size: 1.3rem; transition: 0.3s; }
-        .nav-socials a:hover { color: var(--primary); transform: translateY(-3px); }
+        .logo { font-size: 1.6rem; font-weight: 900; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .nav-socials a { color: #fff; margin-right: 20px; font-size: 1.2rem; transition: 0.3s; }
+        .nav-socials a:hover { color: var(--primary); }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; padding: 0 10%;
-        }
-
-        .version-tag {
-            background: var(--glass); border: 1px solid var(--border);
-            padding: 8px 20px; border-radius: 50px; font-size: 0.8rem;
-            color: var(--primary); margin-bottom: 2rem;
-        }
-
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 1.5rem; }
         .hero h1 span { color: var(--primary); }
-        .hero p { max-width: 750px; color: var(--text-p); font-size: 1.2rem; margin-bottom: 3rem; }
+        .hero p { max-width: 700px; color: var(--text-p); font-size: 1.1rem; }
 
-        .cta-button {
-            background: var(--primary); color: #000; padding: 1.2rem 3.5rem;
-            border-radius: 15px; font-weight: 900; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 15px;
-            transition: 0.4s; box-shadow: 0 0 30px rgba(0, 230, 118, 0.2);
-        }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 230, 118, 0.4); }
+        .btn-main { background: var(--primary); color: #000; padding: 1rem 3rem; border-radius: 50px; font-weight: 900; text-decoration: none; margin-top: 2rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 230, 118, 0.3); }
 
-        /* الأقسام */
-        .section { padding: 100px 10%; }
-        .section-title { text-align: center; margin-bottom: 80px; }
-        .section-title h2 { font-size: 2.8rem; margin-bottom: 1rem; }
-        .section-title p { color: var(--primary); font-weight: bold; letter-spacing: 3px; }
+        .section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .section-title p { color: var(--primary); font-size: 0.9rem; font-weight: bold; letter-spacing: 2px; }
 
-        /* شبكة المحركات والأدوات */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .card {
-            background: var(--surface); border: 1px solid var(--border); padding: 50px;
-            border-radius: 30px; transition: 0.4s; position: relative; overflow: hidden;
-        }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(0, 230, 118, 0.01); }
-        
-        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 2rem; display: block; }
-        .card h3 { font-size: 1.6rem; margin-bottom: 1.2rem; }
-        .card p { color: var(--text-p); font-size: 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--surface); border: 1px solid var(--border); padding: 30px; border-radius: 20px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem; display: block; }
+        .card h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .card p { color: var(--text-p); font-size: 0.9rem; }
 
-        /* صندوق الكود */
-        .vps-box {
-            background: #000; border: 1px solid #1a1a1a; padding: 40px;
-            border-radius: 25px; text-align: center; margin-top: 50px;
-        }
-        .code-container {
-            display: flex; justify-content: center; align-items: center; gap: 20px;
-            background: #080808; padding: 20px; border-radius: 12px; margin-top: 2rem;
-            direction: ltr; border: 1px solid #222;
-        }
-        .code-text { color: var(--primary); font-family: 'Consolas', monospace; font-weight: bold; }
+        .code-box { background: #000; padding: 25px; border-radius: 15px; border: 1px dashed #333; direction: ltr; color: var(--primary); font-family: monospace; font-size: 1.1rem; margin-top: 20px; display: inline-block; }
 
-        footer { padding: 80px 10%; text-align: center; border-top: 1px solid var(--border); color: var(--text-p); }
-
-        @media (max-width: 768px) {
-            nav { width: 95%; padding: 1rem 5%; }
-            .hero h1 { font-size: 2.8rem; }
-        }
+        footer { padding: 40px 10%; text-align: center; border-top: 1px solid var(--border); color: var(--text-p); }
     </style>
 </head>
 <body>
 
-    <div class="tech-overlay"></div>
-
     <nav>
-        <div class="nav-logo">
-            <i class="fas fa-microchip"></i> ModernVPN
-        </div>
+        <div class="logo"><i class="fas fa-microchip"></i> ModernVPN</div>
         <div class="nav-socials">
             <a href="#"><i class="fab fa-telegram"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
@@ -125,79 +68,122 @@
     </nav>
 
     <section class="hero">
-        <div class="version-tag animate__animated animate__fadeInDown">Enterprise Architecture v2.0</div>
-        <h1 data-aos="fade-up">تجاوز <span>الحدود</span> بذكاء تقني</h1>
-        <p data-aos="fade-up" data-aos-delay="100">منظومة موحدة تجمع بين بروتوكولات Xray و SSH وأدوات تحليل الشبكة المتقدمة لتوفير اتصال آمن، مستقر، وغير قابل للكشف.</p>
-        <div class="btn-wrap" data-aos="fade-up" data-aos-delay="200">
-            <a href="#" class="cta-button"><i class="fab fa-android"></i> تحميل APK المباشر</a>
-        </div>
+        <h1 data-aos="fade-up">منظومة <span>الحماية</span> المطلقة</h1>
+        <p data-aos="fade-up" data-aos-delay="100">تطبيق واحد يجمع كافة محركات التشفير وأدوات تحليل الشبكة لضمان خصوصيتك وتجاوز كافة قيود الإنترنت.</p>
+        <a href="#" class="btn-main" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-android"></i> تحميل APK المباشر</a>
     </section>
 
     <section class="section">
         <div class="section-title" data-aos="fade-up">
-            <p>ADVANCED ENGINES</p>
-            <h2>محركات الاتصال الأساسية</h2>
+            <p>CORE ENGINES</p>
+            <h2>كافة بروتوكولات الأنفاق المدعومة</h2>
         </div>
         <div class="grid">
             <div class="card" data-aos="zoom-in">
-                <i class="fas fa-shield-halved"></i>
-                <h3>Xray Advanced</h3>
-                <p>تكامل كامل مع محرك Xray لتشغيل بروتوكولات VLESS عبر عمليات منفصلة لضمان استقرار الأداء 100%.</p>
+                <i class="fas fa-shield-alt"></i>
+                <h3>Xray (V2Ray)</h3>
+                <p>دعم VLESS و VMess عبر عمليات منفصلة لضمان استقرار الأداء 100%.</p>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fas fa-link"></i>
-                <h3>SSH Direct & Proxy</h3>
-                <p>نظام أنفاق SSH مدمج يدعم الـ HTTP Custom والـ SSL Proxy لتخطي كافة أنواع الرقابة الشبكية.</p>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-terminal"></i>
+                <h3>SSH Tunneling</h3>
+                <p>دعم Direct, SSL Proxy, و Payload Custom لتخطي الجدران النارية.</p>
             </div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-wind"></i>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-unlock-alt"></i>
+                <h3>OpenVPN</h3>
+                <p>دمج المحرك الرسمي لاتصالات عالمية مشفرة ومستقرة جداً.</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-ghost"></i>
+                <h3>DNSTT Stealth</h3>
+                <p>نقل البيانات عبر طلبات DNS، الحل الأخير عند إغلاق كافة المنافذ.</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-bolt"></i>
                 <h3>UDP Hysteria</h3>
-                <p>بروتوكول فائق السرعة يعتمد على UDP، مصمم للألعاب والبث المباشر لضمان أقل زمن استجابة (Ping).</p>
+                <p>بروتوكول UDP فائق السرعة مخصص للألعاب والبث المباشر (Ping منخفض).</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-random"></i>
+                <h3>Psiphon Tunnel</h3>
+                <p>محرك القفز بين البروتوكولات لتجاوز الرقابة الشديدة آلياً.</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-mask"></i>
+                <h3>Shadowsocks</h3>
+                <p>بروتوكول تشفير خفيف وسريع جداً لتخطي الحجب الجغرافي.</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-compress-arrows-alt"></i>
+                <h3>Desync TCP</h3>
+                <p>نظام متطور لتجزئة الحزم وتضليل أنظمة الرقابة العميقة (DPI).</p>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: rgba(255,255,255,0.01);">
+    <section class="section" style="background: #080808;">
         <div class="section-title" data-aos="fade-up">
             <p>NETWORK LABORATORY</p>
-            <h2>أدوات فحص وتحليل الشبكة</h2>
+            <h2>مختبر الأدوات المتكامل</h2>
         </div>
         <div class="grid">
-            <div class="card" data-aos="fade-right">
-                <i class="fas fa-radar"></i>
-                <h3>IP Hunter</h3>
-                <p>أداة ذكية للبحث عن عناوين IP المطابقة لنطاقات الشبكة المحلية لضمان نجاح الاتصال.</p>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-search"></i>
+                <h3>Host Checker</h3>
+                <p>تحليل المضيفين واستخراج الهيدرز لاختبار ثغرات الشبكة وبناء Payload.</p>
             </div>
             <div class="card" data-aos="fade-up">
-                <i class="fas fa-magnifying-glass-chart"></i>
-                <h3>Host Checker</h3>
-                <p>تحليل كامل للمضيفين (Hosts) واستخراج الـ Headers لاختبار ثغرات الشبكة وبناء الكونفيجات.</p>
+                <i class="fas fa-crosshairs"></i>
+                <h3>Magic IP Hunter</h3>
+                <p>البحث الآلي عن الآي بي المتوافق مع متطلبات شبكتك لفتح الاتصال.</p>
             </div>
-            <div class="card" data-aos="fade-left">
-                <i class="fas fa-satellite"></i>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-network-wired"></i>
+                <h3>Port Scanner</h3>
+                <p>كشف المنافذ المفتوحة وتحليل الخدمات النشطة في السيرفرات البعيدة.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-chart-line"></i>
                 <h3>Ping Monitor</h3>
-                <p>نظام مراقبة بياني لزمن الاستجابة يساعدك في اختيار أفضل سيرفر لاتصالك الحالي.</p>
+                <p>مراقبة لحظية لزمن الاستجابة مع رسم بياني لمستوى استقرار الاتصال.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-fingerprint"></i>
+                <h3>DNS Leak Test</h3>
+                <p>التأكد التام من عدم تسريب هويتك الحقيقية عبر طلبات الـ DNS.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-wifi"></i>
+                <h3>VPN Hotspot</h3>
+                <p>مشاركة اتصال الـ VPN الخاص بك مع الأجهزة الأخرى عبر نقطة الاتصال.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-globe"></i>
+                <h3>Subdomain Finder</h3>
+                <p>أداة احترافية للبحث عن النطاقات الفرعية المفتوحة داخل الشبكات.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-user-secret"></i>
+                <h3>IP Info</h3>
+                <p>عرض تفاصيل دقيقة حول عنوان IP الخاص بك وموقع السيرفر المتصل به.</p>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="vps-box" data-aos="flip-up">
-            <h2>نظام أتمتة السيرفرات (VPS)</h2>
-            <p style="color: var(--text-dim); margin-top: 1rem;">قم بتهيئة سيرفرك الخاص وتثبيت كافة البروتوكولات بضغطة زر واحدة عبر السكربت الرسمي.</p>
-            <div class="code-container">
-                <span class="code-text">curl -L install.modern-vpn.test | bash</span>
-            </div>
+    <section class="section" style="text-align: center;">
+        <div data-aos="flip-up">
+            <h2>أتمتة السيرفرات (VPS)</h2>
+            <p style="color: var(--text-dim); margin-top: 1rem;">قم بتهيئة سيرفرك وربطه بالمنظومة بضغطة زر واحدة.</p>
+            <div class="code-box">curl -L install.modern-vpn.test | bash</div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 ModernVPN Ecosystem. تم التطوير لدعم الحرية الرقمية والأمن السيبراني.</p>
+        <p>&copy; 2026 ModernVPN Ecosystem - جميع المزايا مدمجة في تطبيق واحد.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
