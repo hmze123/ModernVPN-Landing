@@ -26,7 +26,56 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+/* قسم استعراض صور التطبيق */
+.app-screenshots {
+    padding: 60px 10%;
+    text-align: center;
+    background: transparent;
+}
 
+.screenshots-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.screen-card {
+    width: 260px;
+    border-radius: 30px;
+    border: 6px solid #1a1a1a;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.screen-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.2);
+}
+
+.screen-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9);
+}
+
+.screen-card:hover img {
+    filter: brightness(1);
+}
+
+.screen-label {
+    padding: 15px;
+    background: var(--surface);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--primary);
+}
         /* الهيدر */
         header {
             padding: 1.2rem 10%;
@@ -116,16 +165,34 @@
         </div>
     </header>
 
-    <section class="hero animate__animated animate__fadeIn">
+
+<section class="hero animate__animated animate__fadeIn">
         <div class="tool-badge">إصدار 2026 المستقر</div>
         <h1>الجيل القادم من <span>الخصوصية</span></h1>
         <p>منظومة ذكية تجمع بين محركات V2Ray و SSH و OpenVPN في تطبيق واحد فائق السرعة والأمان.</p>
+        
         <div class="btn-group">
             <a href="#" class="btn btn-primary"><i class="fab fa-android"></i> تحميل APK مباشر</a>
             <a href="#lab" class="btn btn-outline"><i class="fas fa-microscope"></i> استكشاف المختبر</a>
         </div>
-    </section>
 
+        <div class="app-screenshots animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="screenshots-wrapper">
+                <div class="screen-card">
+                    <img src="https://via.placeholder.com/260x540/0a0a0a/00E676?text=Main+Connection" alt="Main Interface">
+                    <div class="screen-label">واجهة الاتصال</div>
+                </div>
+                <div class="screen-card">
+                    <img src="https://via.placeholder.com/260x540/0a0a0a/00E676?text=Protocols+Menu" alt="Protocols">
+                    <div class="screen-label">المحركات المدمجة</div>
+                </div>
+                <div class="screen-card">
+                    <img src="https://via.placeholder.com/260x540/0a0a0a/00E676?text=Network+Tools" alt="Tools">
+                    <div class="screen-label">مختبر الأدوات</div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section">
         <div class="section-title" data-aos="fade-up">
             <p>ADVANCED TUNNELS</p>
